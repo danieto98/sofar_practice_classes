@@ -1,0 +1,15 @@
+<launch>
+
+<group ns="talker1">
+  <node pkg="beginner_tutorials" name="talker" type="talker"/>
+</group>
+
+<group ns="talker2">
+  <node pkg="beginner_tutorials" name="talker" type="talker"/>
+</group>
+
+<node pkg="beginner_tutorials" name="listener" type="listener" output="screen">
+  <remap from="chatter" to="talker1/chatter"/>
+</node>
+
+</launch>
